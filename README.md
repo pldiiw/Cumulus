@@ -21,9 +21,32 @@ Download the [latest release for OSX](https://github.com/gillesdemey/Cumulus/rel
 ## Compile the application
 `grunt` or `grunt build`
 
+You can also run `grunt build-linux` to compile the application for Linux, but
+there is a lot of chance that it doesn't work on your distro. *(Known to work
+on Lubuntu 16.10, see notes below for more insight on how to integrate it)*
+
 ## Run the application with the [Chrome DevTools](https://developer.chrome.com/devtools)
 `NODE_ENV=development electron .`
 
 ### Or in Windows:
 - PowerShell: `$env:NODE_ENV="development"; electron .`
 - CMD: `set "NODE_ENV=development" & electron .`
+
+## Notes for Lubuntu
+
+After building the app, copy the build inside `dist/` to
+`$HOME/.local/lib/Cumulus`.  Open `Cumulus.desktop` inside your favorite editor
+and change the text to your username where `<CHANGEME>` is written. Save the
+modified file to `$HOME/.local/share/applications/Cumulus.desktop`.  Last step,
+soft link `$HOME/.local/lib/Cumulus/Cumulus` to your `$HOME/.local/bin` folder.
+
+You're done!
+
+The `.desktop` file enables Cumulus to be seen inside app menus and launchers.
+
+Here are the commands corresponding to the previous instructions:
+
+    mkdir -vp $HOME/.local/{bin,lib,share/applications}
+    cp -vr dist/Cumulus-linux-x64 $HOME/.local/lib/Cumulus
+    sed "s/<CHANGEME>/$USER/" Cumulus.desktop > $HOME/.local/share/applications/Cumulus.desktop
+    ln -vs $HOME/.local/{lib/Cumulus/Cumulus,bin/Cumulus}

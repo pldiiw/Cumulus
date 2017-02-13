@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Cumulus
+GenericName=Audio Player
+Comment=A SoundCloud player that lives in your menubar.
+Categories=Audio;AudioVideo
+Keywords=Audio;Music;SoundCloud
+
+Type=Application
+Terminal=false
+Exec=/home/<CHANGEME>/.local/bin/Cumulus
+Path=/home/<CHANGEME>/.local/lib/Cumulus
+Icon=/home/<CHANGEME>/.local/lib/Cumulus/resources/app/cumulus.icns

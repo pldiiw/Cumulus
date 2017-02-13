@@ -6,7 +6,8 @@
   "scripts": {
     "start": "grunt",
     "build:osx": "grunt build:osx && npm run package:osx",
-    "package:osx": "hdiutil create -format UDZO -volname Cumulus -srcfolder dist/Cumulus-darwin-x64 dist/Cumulus-$npm_package_version-osx.dmg"
+    "package:osx": "hdiutil create -format UDZO -volname Cumulus -srcfolder dist/Cumulus-darwin-x64 dist/Cumulus-$npm_package_version-osx.dmg",
+    "build:linux": "grunt build:linux"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
